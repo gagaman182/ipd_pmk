@@ -6,9 +6,9 @@
         <app-toolbar class="app--toolbar"></app-toolbar>
         <v-content>
           <!-- Page Header -->
-          <page-header></page-header>
+          <!-- <page-header></page-header> -->
           <div class="page-wrapper">
-            <nuxt/>
+            <nuxt />
           </div>
           <!-- App Footer -->
           <v-footer height="auto" class="white pa-3 app--footer">
@@ -21,8 +21,18 @@
         <!-- Go to top -->
         <app-fab></app-fab>
         <!-- theme setting -->
-        <v-btn small fab dark falt fixed top="top" right="right" class="setting-fab" color="red"
-               @click="openThemeSettings">
+        <v-btn
+          small
+          fab
+          dark
+          falt
+          fixed
+          top="top"
+          right="right"
+          class="setting-fab"
+          color="red"
+          @click="openThemeSettings"
+        >
           <v-icon>settings</v-icon>
         </v-btn>
         <v-navigation-drawer
@@ -37,7 +47,6 @@
         </v-navigation-drawer>
       </v-app>
     </template>
-
 
     <v-snackbar
       :timeout="3000"
@@ -55,52 +64,51 @@
 </template>
 
 <script>
-  import AppDrawer from '@/components/AppDrawer'
-  import AppToolbar from '@/components/AppToolbar'
-  import AppFab from '@/components/AppFab'
-  import PageHeader from '@/components/PageHeader'
-  import ThemeSettings from '@/components/ThemeSettings'
+import AppDrawer from "@/components/AppDrawer";
+import AppToolbar from "@/components/AppToolbar";
+import AppFab from "@/components/AppFab";
+// import PageHeader from '@/components/PageHeader'
+import ThemeSettings from "@/components/ThemeSettings";
 
-  export default {
-    components: {
-      AppDrawer,
-      AppToolbar,
-      AppFab,
-      PageHeader,
-      ThemeSettings
-    },
-    data: () => ({
-      expanded: true,
-      rightDrawer: false,
-      snackbar: {
-        show: false,
-        text: '',
-        color: '',
-      }
-    }),
+export default {
+  components: {
+    AppDrawer,
+    AppToolbar,
+    AppFab,
+    // PageHeader,
+    ThemeSettings
+  },
+  data: () => ({
+    expanded: true,
+    rightDrawer: false,
+    snackbar: {
+      show: false,
+      text: "",
+      color: ""
+    }
+  }),
 
-    methods: {
-      openThemeSettings() {
-        this.$vuetify.goTo(0)
-        this.rightDrawer = (!this.rightDrawer)
-      }
+  methods: {
+    openThemeSettings() {
+      this.$vuetify.goTo(0);
+      this.rightDrawer = !this.rightDrawer;
     }
   }
+};
 </script>
 
 <style lang="stylus" scoped>
-  .setting-fab
-    top: 50% !important;
-    right: 0;
-    border-radius: 0
+.setting-fab
+  top: 50% !important;
+  right: 0;
+  border-radius: 0
 
-  .page-wrapper
-    min-height: calc(100vh - 64px - 50px - 81px);
-    margin-bottom 50px;
+.page-wrapper
+  min-height: calc(100vh - 64px - 50px - 81px);
+  margin-bottom 50px;
 
-  .app--footer
-    position absolute;
-    bottom 0;
-    width 100%;
-
+.app--footer
+  position absolute;
+  bottom 0;
+  width 100%;
 </style>

@@ -1,12 +1,12 @@
 export const state = () => ({
-  drawer: true
-})
+    drawer: false
+});
 
 export const mutations = {
-  toggleDrawer(state) {
-    state.drawer = !state.drawer
-  },
-  drawer(state, val) {
-    state.drawer = val
-  }
-}
+    toggleDrawer(state) {
+        state.drawer = !state.drawer;
+    },
+    drawer(state, val) {
+        state.drawer = val;
+    }
+};
