@@ -40,7 +40,7 @@
           <div slot="widget-content">
             <v-progress-circular
               :size="350"
-              :width="70"
+              :width="40"
               :rotate="360"
               :value="ipdall_progrerss_sex_m"
               color="#FDDC5C"
@@ -55,7 +55,7 @@
           <div slot="widget-content">
             <v-progress-circular
               :size="350"
-              :width="70"
+              :width="40"
               :rotate="360"
               :value="ipdall_progrerss_sex_f"
               color="#475F94"

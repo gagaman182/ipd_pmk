@@ -28,7 +28,7 @@ module.exports = {
             },
             {
                 rel: "stylesheet",
-                href: "https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;1,200&display=swap"
+                href: "https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,200;1,200&display=swap"
             }
         ],
         script: [{
