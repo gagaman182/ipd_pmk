@@ -9,7 +9,7 @@ export default {
     borderColor: null,
     ipddetail: null,
     ipdall_chart_donut_name: null,
-    ipdall_chart_donut_sum: null,
+    ipdall_chart_donut_sum: null
   },
   data() {
     return {
@@ -20,20 +20,20 @@ export default {
             borderWidth: 2,
             borderColor: [],
             backgroundColor: [],
-            data: [],
-          },
-        ],
+            data: []
+          }
+        ]
       },
       options: {
         title: {
           display: true,
           text: "ระดับอาการ ",
-          fontSize: "20",
-          fontFamily: "Kanit, sans-serif",
+          fontSize: "18",
+          fontFamily: "Kanit, sans-serif"
         },
         titleTextStyle: { fontName: "Kanit", fontSize: "20" },
         legend: {
-          display: true,
+          display: true
         },
         responsive: true,
         maintainAspectRatio: false,
@@ -44,7 +44,7 @@ export default {
             formatter: (value, ctx) => {
               let sum = 0;
               let dataArr = ctx.chart.data.datasets[0].data;
-              dataArr.map((data) => {
+              dataArr.map(data => {
                 sum += data;
               });
               let percentage = ((value * 100) / sum).toFixed(1) + "%";
@@ -53,7 +53,7 @@ export default {
 
             font: {
               weight: "bold",
-              size: 16,
+              size: 16
             },
 
             align: "center",
@@ -62,10 +62,10 @@ export default {
             backgroundColor: "#706677",
             // borderColor: "#B0C4DE",
             borderRadius: 4,
-            borderWidth: 1,
-          },
-        },
-      },
+            borderWidth: 1
+          }
+        }
+      }
     };
   },
   mounted() {
@@ -92,7 +92,7 @@ export default {
         "#ffd5cd",
         "#efbbcf",
         "#c3aed6",
-        "#8675a9",
+        "#8675a9"
       ];
       // this.chartData.datasets[0].borderColor = this.chartbodercolor;
       //ค่า+label
@@ -103,7 +103,7 @@ export default {
       //สี label
       // this.options.plugins.datalabels.backgroundColor = "#fcbf49";
       this.options.plugins.datalabels.borderColor = this.chartbodercolor;
-    },
-  },
+    }
+  }
 };
 </script>

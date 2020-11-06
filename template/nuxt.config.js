@@ -77,12 +77,6 @@ module.exports = {
         }
     },
 
-    // axios: {
-    //     // proxyHeaders: false
-    //     baseURL: "http://localhost/ipddashboard/backend/",
-    //     // baseURL: "http://localhost/dd/backend/",
-    // },
-
     /*
      ** Build configuration
      */

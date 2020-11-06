@@ -5,7 +5,7 @@ import ChartJSPluginDatalabels from "chartjs-plugin-datalabels";
 export default {
   extends: Line,
   props: {
-    ipdall_time_line_data: null,
+    ipdall_time_line_data: null
   },
   data() {
     return {
@@ -34,7 +34,7 @@ export default {
           "20.00",
           "21.00",
           "22.00",
-          "23.00",
+          "23.00"
         ],
 
         datasets: [
@@ -50,16 +50,16 @@ export default {
             borderDashOffset: 0.0,
             borderJoinStyle: "miter",
             backgroundColor: "#00416d",
-            borderColor: "#00416d",
-          },
-        ],
+            borderColor: "#00416d"
+          }
+        ]
       },
       options: {
         title: {
           display: true,
           text: "ช่วงเวลา Admit",
-          fontSize: "20",
-          fontFamily: "Kanit, sans-serif",
+          fontSize: "18",
+          fontFamily: "Kanit, sans-serif"
         },
 
         responsive: true,
@@ -70,7 +70,7 @@ export default {
 
             font: {
               weight: "bold",
-              size: 16,
+              size: 16
             },
 
             align: "center",
@@ -79,32 +79,32 @@ export default {
             backgroundColor: "#00416d",
             // borderColor: "#B0C4DE",
             borderRadius: 2,
-            borderWidth: 1,
-          },
+            borderWidth: 1
+          }
         },
         scales: {
           yAxes: [
             {
               ticks: {
                 beginAtZero: true,
-                fontSize: 20,
+                fontSize: 18,
                 fontFamily: "Kanit, sans-serif",
-                fontStyle: "italic",
-              },
-            },
+                fontStyle: "italic"
+              }
+            }
           ],
           xAxes: [
             {
               ticks: {
                 beginAtZero: true,
-                fontSize: 20,
+                fontSize: 18,
                 fontFamily: "Kanit, sans-serif",
-                fontStyle: "italic",
-              },
-            },
-          ],
-        },
-      },
+                fontStyle: "italic"
+              }
+            }
+          ]
+        }
+      }
     };
   },
   mounted() {
@@ -120,7 +120,7 @@ export default {
     changetitlecolor() {
       this.chartData.datasets[0].data = this.ipdall_time_line_data[0];
       this.options.animateRotate = true;
-    },
-  },
+    }
+  }
 };
 </script>

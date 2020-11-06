@@ -45,7 +45,7 @@
               :value="ipdall_progrerss_sex_m"
               color="#FDDC5C"
             >
-              <h2>{{ "ชาย" }} {{ parseInt(ipdall_progrerss_sex_m) }}%</h2>
+              <h3>{{ "ชาย" }} {{ parseInt(ipdall_progrerss_sex_m) }}%</h3>
             </v-progress-circular>
           </div>
         </v-widget>
@@ -61,13 +61,13 @@
               color="#475F94"
               :height="20"
             >
-              <h2>{{ "หญิง" }} {{ parseInt(ipdall_progrerss_sex_f) }}%</h2>
+              <h3>{{ "หญิง" }} {{ parseInt(ipdall_progrerss_sex_f) }}%</h3>
             </v-progress-circular>
           </div>
         </v-widget>
       </v-flex>
 
-      <!-- google chart -->
+      <!-- google chart right -->
       <v-flex sm12 md6 sm6>
         <v-widget title="กราฟแสดงตามสิทธิการรักษา" :colors="chartcolor">
           <div slot="widget-content">
@@ -100,6 +100,14 @@
           </div>
         </v-widget>
       </v-flex>
+      <!-- time line chartjs -->
+      <!-- <v-flex sm12 md12 sm12>
+        <v-widget title="กราฟแสดงตามช่วงเวลา" :colors="chartcolor">
+          <div slot="widget-content">
+            <BarChartApex></BarChartApex>
+          </div>
+        </v-widget>
+      </v-flex> -->
     </v-layout>
   </v-container>
 </template>
@@ -113,6 +121,8 @@ import DoughnutChart from "@/components/chart/chartjs/DoughnutChart";
 import PieChartHorizon from "@/components/chart/google/PieChartHorizon";
 import StackedColumn from "@/components/chart/google/StackedColumn";
 
+// import BarChartApex from "@/components/chart/apex/BarChartApex";
+
 export default {
   layout: "dashboard",
   components: {
@@ -122,6 +132,7 @@ export default {
     DoughnutChart,
     PieChartHorizon,
     StackedColumn
+    // BarChartApex
   },
   data() {
     return {

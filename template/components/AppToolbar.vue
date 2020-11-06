@@ -3,7 +3,12 @@
     <v-toolbar-title class="ml-0 pl-3">
       <v-toolbar-side-icon @click.stop="toggleDrawer()"></v-toolbar-side-icon>
     </v-toolbar-title>
-
+    <div class="text-xs-center">
+      <h3 class="  white--text ">
+        <v-icon large color="white lighten-3">dashboard</v-icon>
+        Dashboard IPD โรงพยาบาลหาดใหญ่
+      </h3>
+    </div>
     <v-spacer></v-spacer>
 
     <v-btn icon @click="handleFullScreen()">

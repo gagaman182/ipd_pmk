@@ -9,23 +9,23 @@ import { GChart } from "vue-google-charts";
 export default {
   name: "App",
   components: {
-    GChart,
+    GChart
   },
   props: {
     chartData: null,
-    ipddetail: null,
+    ipddetail: null
   },
   data() {
     return {
       chartData: [],
       chartOptions: {
         title: "สิทธิการรักษา",
-        titleTextStyle: { fontName: "Kanit ", fontSize: "20" },
+        titleTextStyle: { fontName: "Kanit ", fontSize: "18" },
         height: 350,
 
         legend: {
           position: "labeled",
-          textStyle: { fontName: "Kanit ,font-weight: bold", fontSize: "20" },
+          textStyle: { fontName: "Kanit ,font-weight: bold", fontSize: "18" }
         },
         pieSliceTextStyle: { fontSize: 16 },
         // sliceVisibilityThreshold: 0.05,
@@ -34,13 +34,13 @@ export default {
 
         slices: {
           1: { offset: 0.2 },
-          3: { offset: 0.3 },
+          3: { offset: 0.3 }
         },
         chartArea: {
           left: "3%",
           top: "13%",
           height: "100%",
-          width: "100%",
+          width: "100%"
         },
 
         // is3D: true,
@@ -50,10 +50,10 @@ export default {
           "#a480cf",
           "#779be7",
           "#49b6ff",
-          "#ffc09f",
-        ],
-      },
+          "#ffc09f"
+        ]
+      }
     };
-  },
+  }
 };
 </script>

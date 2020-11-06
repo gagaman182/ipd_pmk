@@ -8,42 +8,44 @@ import { GChart } from "vue-google-charts";
 
 export default {
   props: {
-    chartData: [],
+    chartData: []
   },
   components: {
-    GChart,
+    GChart
   },
   data: function() {
     return {
       chartData: [],
       chartOptions: {
         title: "จำนวนผู้รับบริการ/เดือน",
-        titleTextStyle: { fontName: "Kanit", fontSize: "20" },
+        titleTextStyle: { fontName: "Kanit", fontSize: "18" },
 
         hAxis: {
           title: "เดือน",
-          textStyle: { fontName: "Kanit ", fontSize: "18" },
+          textStyle: { fontName: "Kanit ", fontSize: "18" }
         },
         vAxis: {
           title: "จำนวน",
-          textStyle: { fontName: "Kanit ", fontSize: "18" },
+          textStyle: { fontName: "Kanit ", fontSize: "18" }
         },
 
         height: 400,
+        // backgroundColor: "#effad3",
 
-        colors: ["#848ccf"],
+        colors: ["#51adcf"],
         pointsVisible: true,
         chartArea: {
           left: "5%",
           top: "10%",
           height: "70%",
-          width: "85%",
+          width: "85%"
         },
-      },
+        colors: ["#d9adad", "#84a9ac"]
+      }
     };
   },
   mounted() {
-    console.log(this.chartData);
-  },
+    // console.log(this.chartData);
+  }
 };
 </script>

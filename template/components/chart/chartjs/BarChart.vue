@@ -11,7 +11,7 @@ export default {
     borderColor: null,
     ipddetail: null,
     ipdall_chart_bar_name: null,
-    ipdall_chart_bar_sum: null,
+    ipdall_chart_bar_sum: null
   },
   data() {
     return {
@@ -31,10 +31,10 @@ export default {
             rough: {
               roughness: 2,
 
-              bowing: 2,
-            },
-          },
-        ],
+              bowing: 2
+            }
+          }
+        ]
       },
 
       options: {
@@ -42,7 +42,7 @@ export default {
           display: true,
           text: "หอผู้ป่วย",
           fontSize: "20",
-          fontFamily: "Kanit, sans-serif",
+          fontFamily: "Kanit, sans-serif"
         },
 
         scales: {
@@ -50,32 +50,32 @@ export default {
             {
               ticks: {
                 beginAtZero: true,
-                fontSize: 20,
+                fontSize: 18,
                 fontFamily: "Kanit, sans-serif",
-                fontStyle: "italic",
+                fontStyle: "italic"
               },
               gridLines: {
-                display: true,
-              },
-            },
+                display: true
+              }
+            }
           ],
           xAxes: [
             {
               gridLines: {
-                display: false,
+                display: false
               },
               ticks: {
                 beginAtZero: true,
-                fontSize: 20,
+                fontSize: 18,
                 fontFamily: "Kanit, sans-serif",
-                fontStyle: "italic",
-              },
-            },
-          ],
+                fontStyle: "italic"
+              }
+            }
+          ]
         },
 
         legend: {
-          display: true,
+          display: true
         },
         responsive: true,
         maintainAspectRatio: false,
@@ -86,7 +86,7 @@ export default {
 
             font: {
               weight: "bold",
-              size: 16,
+              size: 16
             },
             // align: function(context) {
             //   var index = context.dataIndex;
@@ -101,10 +101,10 @@ export default {
             backgroundColor: "#92817a",
             // borderColor: "#B0C4DE",
             borderRadius: 4,
-            borderWidth: 1,
-          },
-        },
-      },
+            borderWidth: 1
+          }
+        }
+      }
     };
   },
   mounted() {
@@ -141,7 +141,7 @@ export default {
       this.options.plugins.datalabels.borderColor = this.chartbodercolor;
 
       // console.log(this.ipdall_chart_bar_name);
-    },
-  },
+    }
+  }
 };
 </script>
