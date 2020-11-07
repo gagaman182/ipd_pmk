@@ -2,7 +2,7 @@
   <div class="app">
     <apexcharts
       type="bar"
-      height="350"
+      height="380"
       :options="chartOptions"
       :series="series"
     ></apexcharts>
@@ -16,46 +16,55 @@ export default {
     apexcharts: VueApexCharts
   },
   props: {
-    ipdall_day_name: null,
-    ipdall_day_ipdall: null
+    ipdall_topdiag_name: null,
+    ipdall_topdiag_ipdall_f: null,
+    ipdall_topdiag_ipdall_m: null
   },
   data() {
     return {
       series: [
         {
-          name: "จำนวนที่ Admit",
+          name: "ชาย",
+          data: []
+        },
+        {
+          name: "หญิง",
           data: []
         }
       ],
       chartOptions: {
         chart: {
           type: "bar",
-          height: 350
+          height: 400,
+          stacked: true
         },
         plotOptions: {
           bar: {
-            horizontal: false,
-            columnWidth: "55%",
-            endingShape: "rounded"
+            horizontal: true,
+            barHeight: "100%"
           }
         },
         dataLabels: {
           enabled: true,
           style: {
-            fontSize: "18px",
+            fontSize: "16px",
             fontFamily: "Kanit, sans-serif"
           }
         },
         stroke: {
-          show: true,
-          width: 2,
-          colors: ["transparent"]
+          width: 1,
+          colors: ["#fff"]
         },
-
+        title: {
+          text: "10 อันดับแรก",
+          style: {
+            fontSize: "18px",
+            fontFamily: "Kanit, sans-serif"
+          }
+        },
         xaxis: {
           categories: [],
           labels: {
-            rotate: -45,
             style: {
               fontSize: "16px",
               fontFamily: "Kanit, sans-serif"
@@ -64,47 +73,41 @@ export default {
         },
         yaxis: {
           title: {
-            text: "จำนวน",
-            style: {
-              fontSize: "18px",
-              fontFamily: "Kanit, sans-serif"
-            }
+            text: undefined
           },
+
           labels: {
             style: {
-              fontSize: "16px",
+              fontSize: "14px",
               fontFamily: "Kanit, sans-serif"
             }
-          }
-        },
-        fill: {
-          type: "gradient",
-          gradient: {
-            shade: "light",
-            type: "horizontal",
-            shadeIntensity: 0.25,
-            gradientToColors: undefined,
-            inverseColors: true,
-            opacityFrom: 0.85,
-            opacityTo: 0.85,
-            stops: [50, 0, 100]
           }
         },
         tooltip: {
-          enabled: true,
-          offsetX: 0,
           style: {
             fontSize: "16px",
             fontFamily: "Kanit, sans-serif"
           }
         },
-        colors: ["#19d3da"]
+        fill: {
+          opacity: 1
+        },
+        legend: {
+          position: "top",
+          horizontalAlign: "left",
+
+          offsetX: 40,
+          fontSize: "16px",
+          fontFamily: "Kanit, sans-serif"
+        },
+        colors: ["#b83b5e", "#6a2c70"]
       }
     };
   },
   beforeMount() {
-    this.series[0].data = this.ipdall_day_ipdall;
-    this.chartOptions.xaxis.categories = this.ipdall_day_name;
+    this.series[0].data = this.ipdall_topdiag_ipdall_m;
+    this.series[1].data = this.ipdall_topdiag_ipdall_f;
+    this.chartOptions.xaxis.categories = this.ipdall_topdiag_name;
   }
 };
 </script>

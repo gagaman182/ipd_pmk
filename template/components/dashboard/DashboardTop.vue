@@ -3,7 +3,7 @@
     <v-layout row wrap>
       <v-flex sm12>
         <div class="headline grey--text text--darken-1 mainhead">
-          <h3><v-icon large>web</v-icon> จำนวนผู้รับบริการผู้ป่วยใน(คน)</h3>
+          <h3><v-icon large>web</v-icon> จำนวนผู้รับบริการผู้ป่วยใน</h3>
         </div>
       </v-flex>
       <v-flex lg3 sm12>
@@ -113,9 +113,9 @@
     <span>{{ today }}</span>
     <v-layout row wrap>
       <v-flex lg12 sm12>
-        <v-card>
+        <v-card color="#f6f5f5">
           <h3 class=" pa-3">
-            กราฟแสดงจำนวนผู้รับบริการผู้ป่วยในรายปี
+            กราฟแสดงจำนวนผู้ป่วย Admit รายปี
           </h3>
 
           <v-card-text class="white--text">
@@ -130,9 +130,9 @@
         </v-card>
       </v-flex>
       <v-flex lg12 sm12>
-        <v-card>
+        <v-card color="#f6f5f5">
           <h3 class=" pa-4">
-            จำนวนผู้ป่วย Admit เดือนล่าสุด
+            กราฟแสดงจำนวนผู้ป่วย Admit เดือนล่าสุด
           </h3>
 
           <v-card-text>

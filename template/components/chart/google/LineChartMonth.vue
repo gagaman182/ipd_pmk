@@ -30,17 +30,17 @@ export default {
         },
 
         height: 400,
-        // backgroundColor: "#effad3",
 
         colors: ["#51adcf"],
         pointsVisible: true,
+        backgroundColor: "#f6f5f5",
         chartArea: {
           left: "5%",
           top: "10%",
           height: "70%",
           width: "85%"
         },
-        colors: ["#d9adad", "#84a9ac"]
+        colors: ["#19d3da", "#d2e603"]
       }
     };
   },
