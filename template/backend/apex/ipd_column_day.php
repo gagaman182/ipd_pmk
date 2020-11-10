@@ -6,7 +6,7 @@ include 'connect.php';
 
 
   $sqlipd = "SELECT
-  to_char(DATEADMIT,'dd/mm/yyyy') AS days,
+  concat(to_char(DATEADMIT,'dd/mm/'), TO_CHAR(CURRENT_DATE, 'yyyy')+543) AS days, 
 count(an) as ipdall
 FROM
   IPDTRANS

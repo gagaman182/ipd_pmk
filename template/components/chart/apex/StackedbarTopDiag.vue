@@ -18,7 +18,8 @@ export default {
   props: {
     ipdall_topdiag_name: null,
     ipdall_topdiag_ipdall_f: null,
-    ipdall_topdiag_ipdall_m: null
+    ipdall_topdiag_ipdall_m: null,
+    ipdall_topdiag_ipdall_years: null
   },
   data() {
     return {
@@ -108,6 +109,12 @@ export default {
     this.series[0].data = this.ipdall_topdiag_ipdall_m;
     this.series[1].data = this.ipdall_topdiag_ipdall_f;
     this.chartOptions.xaxis.categories = this.ipdall_topdiag_name;
+    this.chartOptions.title.text = `ปีงบ ${
+      this.ipdall_topdiag_ipdall_years[0]
+    }`;
+  },
+  mounted() {
+    console.log(this.ipdall_topdiag_ipdall_years);
   }
 };
 </script>

@@ -40,12 +40,12 @@ export default {
           height: "70%",
           width: "85%"
         },
-        colors: ["#19d3da", "#d2e603"]
+        colors: ["#f72585", "#7209b7", "#4361ee"]
       }
     };
   },
   mounted() {
-    // console.log(this.chartData);
+    console.log(this.chartData);
   }
 };
 </script>
