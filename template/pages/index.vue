@@ -22,7 +22,7 @@
     <!-- end -->
     <!-- dashboard lower -->
 
-    <v-layout row wrap> <DashboardLower></DashboardLower> </v-layout>
+    <!-- <v-layout row wrap> <DashboardLower></DashboardLower> </v-layout> -->
   </v-container>
 </template>
 

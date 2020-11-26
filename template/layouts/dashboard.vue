@@ -21,7 +21,7 @@
         <!-- Go to top -->
         <app-fab></app-fab>
         <!-- theme setting -->
-        <v-btn
+        <!-- <v-btn
           small
           fab
           dark
@@ -34,7 +34,7 @@
           @click="openThemeSettings"
         >
           <v-icon>settings</v-icon>
-        </v-btn>
+        </v-btn> -->
         <v-navigation-drawer
           class="setting-drawer"
           temporary
