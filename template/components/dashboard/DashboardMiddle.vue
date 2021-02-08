@@ -57,6 +57,41 @@
           </v-card-actions> -->
         </v-card>
       </v-flex>
+      <v-flex lg4 sm12>
+        <v-card>
+          <v-responsive>
+            <h3 class=" pa-3">
+              ตารางแสดงข้อมูลจำนวน แอ็ดมิท/จำนวนเตียง
+            </h3>
+          </v-responsive>
+          <v-card-text>
+            <div>
+              <BedStableAll :ipd_beds_table="ipd_beds_table"></BedStableAll>
+            </div>
+          </v-card-text>
+          <v-divider></v-divider>
+        </v-card>
+      </v-flex>
+      <v-flex lg8 sm12>
+        <v-card>
+          <v-responsive>
+            <h3 class=" pa-3">
+              กราฟแสดงข้อมูลเปอร์เซ็นต์การแอ็ดมิท
+            </h3>
+          </v-responsive>
+          <v-card-text>
+            <div>
+              <BarChartBeds
+                v-if="loaddata_table_bed"
+                :height="1100"
+                :ipdall_bed_label="ipdall_bed_label"
+                :ipdall_bed_data="ipdall_bed_data"
+              ></BarChartBeds>
+            </div>
+          </v-card-text>
+          <v-divider></v-divider>
+        </v-card>
+      </v-flex>
     </v-layout>
   </v-container>
 </template>
@@ -66,12 +101,17 @@ import axios from "axios";
 
 import StackedbarTopDiag from "@/components/chart/apex/StackedbarTopDiag";
 import StackedbarTopDiag15age from "@/components/chart/apex/StackedbarTopDiag15age";
-
+import BedStableAll from "@/components/table/bedstableall";
+import BarChartBed from "@/components/chart/google/BarChartBed";
+import BarChartBeds from "@/components/chart/chartjs/BarChartBeds";
 export default {
   name: "dashboardmiddle",
   components: {
     StackedbarTopDiag,
-    StackedbarTopDiag15age
+    StackedbarTopDiag15age,
+    BedStableAll,
+    BarChartBed,
+    BarChartBeds
   },
   data() {
     return {
@@ -88,13 +128,18 @@ export default {
       ipdall_topdiag_ipdall_m15_years: null,
 
       loaddata_table_topdiag: false,
-      ipdall_table_topdiag: null
+      ipdall_table_topdiag: null,
+      loaddata_table_bed: null,
+      ipdall_bed: null,
+      ipdall_bed_label: null,
+      ipdall_bed_data: null
     };
   },
   mounted() {
     this.feathapex_topdiag();
     this.feathapex_topdiag15();
     this.feathgoogle_table_topdiag();
+    this.feathbar_bed();
   },
   methods: {
     //fresh stackedbar apex chart top diag
@@ -149,7 +194,18 @@ export default {
         .then(response => {
           this.loaddata_table_topdiag = true;
           this.ipdall_table_topdiag = response.data;
-          // console.log(this.ipdall_table_topdiag);
+        });
+    },
+    //fresh chartjs  bar bed
+    async feathbar_bed() {
+      await axios
+        .get(`${this.$axios.defaults.baseURL}ipd_bed_all.php`)
+        .then(response => {
+          this.loaddata_table_bed = true;
+          this.ipdall_bed = response.data;
+
+          this.ipdall_bed_label = this.ipdall_bed.map(item => item.NAME);
+          this.ipdall_bed_data = this.ipdall_bed.map(item => item.BED1_LEVEL);
         });
     }
   }

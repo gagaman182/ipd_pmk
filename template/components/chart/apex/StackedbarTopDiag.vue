@@ -114,7 +114,7 @@ export default {
     }`;
   },
   mounted() {
-    console.log(this.ipdall_topdiag_ipdall_years);
+    // console.log(this.ipdall_topdiag_ipdall_years);
   }
 };
 </script>

@@ -62,8 +62,8 @@ module.exports = {
     modules: ["@nuxtjs/axios"],
 
     axios: {
-        // baseURL: "http://localhost/ipd_pmk/template/backend/" // Used as fallback if no runtime config is provided
-        baseURL: "http://localhost/ipdpmk/backend/" // Used as fallback if no runtime config is provided
+        //baseURL: "http://localhost/ipd_pmk/template/backend/"
+        baseURL: "http://192.168.4.3/webapp/ipdpmk/backend/"
     },
 
     publicRuntimeConfig: {
@@ -96,7 +96,6 @@ module.exports = {
         extend(config, ctx) {}
     },
     router: {
-        // base: "/tee/pasaduweb"
-        base: "/ipdpmk"
+        base: "/webapp/ipdpmk"
     }
 };

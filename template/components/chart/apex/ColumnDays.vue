@@ -98,7 +98,7 @@ export default {
             fontFamily: "Kanit, sans-serif"
           }
         },
-        colors: ["#4ecdc4"]
+        colors: ["#3c2946"]
       }
     };
   },

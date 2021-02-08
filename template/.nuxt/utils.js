@@ -128,7 +128,7 @@ export async function setContext(app, context) {
       store: app.store,
       payload: context.payload,
       error: context.error,
-      base: '/ipdpmk',
+      base: '/webapp/ipdpmk',
       env: {}
     }
     // Only set once

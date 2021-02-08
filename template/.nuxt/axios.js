@@ -143,8 +143,8 @@ export default (ctx, inject) => {
   const runtimeConfig = ctx.$config && ctx.$config.axios || {}
   // baseURL
   const baseURL = process.browser
-    ? (runtimeConfig.browserBaseURL || runtimeConfig.baseURL || 'http://localhost/ipdpmk/backend/')
-      : (runtimeConfig.baseURL || process.env._AXIOS_BASE_URL_ || 'http://localhost/ipdpmk/backend/')
+    ? (runtimeConfig.browserBaseURL || runtimeConfig.baseURL || 'http://192.168.4.3/webapp/ipdpmk/backend/')
+      : (runtimeConfig.baseURL || process.env._AXIOS_BASE_URL_ || 'http://192.168.4.3/webapp/ipdpmk/backend/')
 
   // Create fresh objects for all default header scopes
   // Axios creates only one which is shared across SSR requests!
